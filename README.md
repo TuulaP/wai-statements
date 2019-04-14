@@ -57,6 +57,7 @@ For now you need to strip and modify all files manually to make it includeable i
 
 ###  Installation as stand-alone (on Windows Subsystem for Linux)  
 
+  ```
   sudo apt-get update -y && sudo apt-get upgrade -y
   sudo apt-add-repository ppa:brightbox/ruby-ng
   sudo apt-get update
@@ -66,7 +67,7 @@ For now you need to strip and modify all files manually to make it includeable i
   
   jekyll -v
   
-  git clone your-on-fork-here
+  git clone your-own-fork-here
   cd wai-statements/
 
   sudo apt-get install libz-dev
@@ -74,10 +75,12 @@ For now you need to strip and modify all files manually to make it includeable i
   /usr/local/bin/bundle update
   /usr/local/bin/bundle install
   /usr/local/bin/bundle exec jekyll build
+  ```
 
 
 ### Actual content pages   
 
+  ```
   git submodule add https://github.com/w3c/wai-website-data.git _external/data
   ls
   git rm -r _data
@@ -93,6 +96,7 @@ For now you need to strip and modify all files manually to make it includeable i
   ln -s ../_external/data/wcag.yml
   /usr/local/bin/bundle exec jekyll build
   /usr/local/bin/bundle exec jekyll serve
+  ```
 
   NB! Some of the above symbolic links require tweaking...
 
