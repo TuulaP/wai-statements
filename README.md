@@ -55,6 +55,50 @@ The complete site is build inside the `_site` folder and the generated files you
 
 For now you need to strip and modify all files manually to make it includeable into your own project.
 
+###  Installation as stand-alone (on Windows Subsystem for Linux)  
+
+  sudo apt-get update -y && sudo apt-get upgrade -y
+  sudo apt-add-repository ppa:brightbox/ruby-ng
+  sudo apt-get update
+  sudo apt-get install ruby2.5 ruby2.5-dev build-essential dh-autoreconf
+  sudo gem update
+  sudo gem install jekyll bundler
+  
+  jekyll -v
+  
+  git clone your-on-fork-here
+  cd wai-statements/
+
+  sudo apt-get install libz-dev
+  sudo gem install nokogiri -v '1.10.2' --source 'https://rubygems.org/'
+  /usr/local/bin/bundle update
+  /usr/local/bin/bundle install
+  /usr/local/bin/bundle exec jekyll build
+
+
+### Actual content pages   
+
+  git submodule add https://github.com/w3c/wai-website-data.git _external/data
+  ls
+  git rm -r _data
+  git submodule add https://github.com/w3c/wai-website-data.git _external/data
+  git rm -r _external
+  git submodule add https://github.com/w3c/wai-website-data.git _external/data
+  mkdir _data
+  cd _data/
+  ln -s ../_external/data/lang.json
+  ln -s ../_external/data/navigation.yml
+  ln -s ../_external/data/techniques.yml
+  ln -s ../_external/data/translations.yml
+  ln -s ../_external/data/wcag.yml
+  /usr/local/bin/bundle exec jekyll build
+  /usr/local/bin/bundle exec jekyll serve
+
+  NB! Some of the above symbolic links require tweaking...
+
+
+
+
 #### TODO for stand alone version
 
 - [ ] Add standalone version page `generator/standalone.html`

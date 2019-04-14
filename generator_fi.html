@@ -1,0 +1,1049 @@
+---
+title: "Luo saavutettavuusseloste"
+permalink: /planning/statements/generator/
+parent_path: /planning/statements/
+github:
+repository: w3c/wai-statements
+path: "generator_fi.html"
+footer: >
+<p><strong>Päivämäärä:</strong>Julkaistu DD.MM.2019.</p>
+<p><strong>Tekijät:</strong></p>
+<p>Alkuperäinen kehittäjä <a href="https://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a>, osana <a
+        href="https://www.w3.org/WAI/Tools/">WAI-Tools projektia</a>, European komission osarahoittamana. <a
+        href="../acknowledgements/">Kiitokset</a>.</p>
+external_css: /content-images/wai-statements/generator.css
+---
+<div id="accstatement">
+    <section class="page create" hidden="hidden">
+        <div class="container">
+
+            {% include box.html type="start" title="Kuinka käyttää tätä työkalua" class="" %}
+            <p>Annetun informaation avulla luodaan saavutettavuusselosteen pohja, jonka voi ladata ja parantaa edelleen.
+                Kaikki kentät ovat vapaaehtoisia. Mitään antamastasi informaatiosta ei talleteta selaimesi ulkopuolelle.
+            </p>
+            {% include box.html type="end" %}
+
+            {% include_cached toc.html type="start" title="Sivun sisältö" class="full" %}
+            <ul>
+                <li>
+                    <a href="#create-basic">Perustiedot</a>
+                </li>
+                <li>
+                    <a href="#create-efforts">Toimenpiteet (Your efforts)</a>
+                </li>
+                <li>
+                    <a href="#create-technical">Tekniset tiedot</a>
+                </li>
+                <li>
+                    <a href="#create-approval">Hyväksyntä ja valitusprosessi</a>
+                </li>
+            </ul>
+            {% include_cached toc.html type="end" %}
+
+            <div style="display: flex; align-items: center;">
+                {% include excol.html type="all" %}
+                <div style="text-align: right; flex:1">
+                    <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                        data-target=".information" data-showtext="Näytä kaikki lisätiedot"
+                        data-hidetext="Piilota kaikki lisätiedot">Näytä kaikki lisätiedot</button>
+                </div>
+            </div>
+            <form name="create_accessibility_statement_form">
+                {% include excol.html type="start" open="true" %}
+                <h2 id="create-basic">Perustiedot</h2>
+                <p class="intro">Tässä osiossa voit tuottaa saavutettavuusselosteen suositellut minimitiedot
+                    Tähän sisältyy tieto organisaatiostasi, sovelettavista saavutettavuusstandardeista ja
+                    yhteystiedot palautetta varten.</p>
+
+                {% include excol.html type="middle" %}
+                <div class="group">
+                    <h3 class="label">Saavutettavuusselosteestasi
+                        <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                            aria-controls="info_about" data-target="#info_about" data-showtext="Näytä tiedot"
+                            data-hidetext="Piilota tiedot">Näytä tiedot</button>
+                    </h3>
+                    <div class="information" id="info_about" hidden="hidden">
+                        <p>Tässä voit antaa organisaatiosi nimen, ja palvelusi verkkosivun tai mobiiliapplikaation
+                            nimen tai verkko-osoitteen. Mobiiliapplikaatioiden osalta sisällytä versio informaation
+                            ja julkaisupäivä, jotta tietty versio on tunnistettavissa.
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <label for="accstmt_org">Organisaatiosi nimi</label>
+                        <em>(Esimerkki: “Esimerkki Oy”)</em>
+                        <input type="text" id="accstmt_org" />
+                    </div>
+
+                    <div class="field">
+                        <label for="accstmt_url">Verkkosivun osoite (verkkopalvelu tai mobiiliapplikaatio)</label>
+                        <em>(Esimerkki: “https://esimerkki.org”)</em>
+                        <input type="text" id="accstmt_url" />
+                    </div>
+
+                    <div class="field">
+                        <label for="accstmt_namesite">Verkkopalvelusi tai mobiiliapplikaation nimi</label>
+                        <em>(Esimerkki: “Esimerkki Kauppa" or “Esimerkki App 1.2.3”)</em>
+                        <input type="text" id="accstmt_namesite" />
+                    </div>
+                </div>
+
+                <div class="group">
+                    <h3 class="label">Sovelletut saavutettavuusstandardit
+                        <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                            aria-controls="info_standards" data-target="#info_standards" data-showtext="Näytä tiedot"
+                            data-hidetext="Hide Info">Näytä tiedot</button>
+                    </h3>
+                    <div class="information" id="info_standards" hidden="hidden">
+                        <p>Mitä saavutettavuusstandardeja noudatat?
+                            <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility
+                                Guidelines (WCAG)</a>
+                            ovat kansainvälisesti tunnustetut. Viimeisin versio on WCAG 2.1.</p>
+                    </div>
+
+                    <fieldset class="field" id="standard-applied">
+                        <legend class="label">Noudatetut saavutettavuusstandardit:</legend>
+                        <div class="radio-field">
+                            <input type="radio" name="accstmnt_standard" id="accstmnt_standard_wcag21aa"
+                                checked="checked" value="WCAG 2.1 level AA" />
+                            <label for="accstmnt_standard_wcag21aa">WCAG 2.1 taso AA</label>
+                        </div>
+
+                        <div class="radio-field">
+                            <input type="radio" name="accstmnt_standard" id="accstmnt_standard_wcag20aa"
+                                value="WCAG 2.0 level AA" />
+                            <label for="accstmnt_standard_wcag20aa">WCAG 2.0 taso AA</label>
+                        </div>
+
+                        <div class="radio-field">
+                            <input type="radio" name="accstmnt_standard" id="accstmnt_standard_other"
+                                value="another standard" />
+                            <label for="accstmnt_standard_other">Muu</label>
+                            <input aria-label="Other standard name" type="text" id="accstmnt_standard_other_name">
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="group">
+                    <h3 class="label">Yhdenmukaisuuden tilanne
+                        <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                            aria-controls="info_conformance" data-target="#info_conformance"
+                            data-showtext="Näytä tiedot" data-hidetext="Hide Info">Näytä tiedot</button>
+                    </h3>
+                    <div class="information" id="info_conformance" hidden="hidden">
+                        <p>Kuinka kattavasti olet yhdenmukainen aiemmassa osassa valittuun standardiin nähden?
+                            Joskus on perusteltuja syitä että ei ole täysin yhdenmukainen. Voit kertoa tässä
+                            osat, jotka eivät ole täysin yhdenmukaisia, sisällyttäen opastuksen kuinka käyttäjät
+                            voivat löytää apua, myöhemmissä lomakkeen osioissa.
+                        </p>
+                    </div>
+
+                    <fieldset class="field" id="conformance-status">
+                        <legend class="visuallyhidden">Ohjeidenmukaisuuden tilanne</legend>
+                        <div class="radio-field">
+                            <input type="radio" name="accstmnt_conformance" id="accstmnt_conformance_full"
+                                value="Fully conformant" />
+                            <label for="accstmnt_conformance_full">
+                                <span class="status">Täysin vastaava</span>:
+                                <span class="meaning">sisältö vastaa täysin saavutettavuusstandardia ilman yhtäkään
+                                    poikkeusta</span>
+                            </label>
+                        </div>
+                        <div class="radio-field">
+                            <input type="radio" name="accstmnt_conformance" id="accstmnt_conformance_partial"
+                                value="Partially conformant" checked="checked" />
+                            <label for="accstmnt_conformance_partial">
+                                <span class="status">Osittain yhdenmukainen</span>:
+                                <span class="meaning">jotkin sisällön osat eivät vastaa täysin
+                                    saavutettavuusstandardia</span>
+                                <span>(voit kertoa mitkä osat, myöhemmin tässä lomakkeessa)</span>
+                            </label>
+                        </div>
+                        <div class="radio-field">
+                            <input type="radio" name="accstmnt_conformance" id="accstmnt_conformance_nonconformant"
+                                value="Non conformant" />
+                            <label for="accstmnt_conformance_nonconformant">
+                                <span class="status">Ei yhdenmukainen</span>:
+                                <span class="meaning">sisältö ei ole saavutettavuusstandardin kanssa
+                                    yhdenmukainen</span>
+                            </label>
+                        </div>
+                        <div class="radio-field">
+                            <input type="radio" name="accstmnt_conformance" id="accstmnt_conformance_unknown"
+                                value="Not assessed" />
+                            <label for="accstmnt_conformance_unknown">
+                                <span class="status">Arvioimatta</span>:
+                                <span class="meaning">sisältöä ei ole arvioitu tai arviointitulokset eivät ole
+                                    saatavilla</span>
+                            </label>
+                        </div>
+                        <div class="radio-field">
+                            <input type="radio" name="accstmnt_conformance" id="accstmnt_conformance_inapplicable"
+                                value="" />
+                            <label for="accstmnt_conformance_inapplicable">Ei sovellettavissa</label>
+                        </div>
+                        <input id="accstmnt_conformance_meaning" type="hidden" value="">
+                    </fieldset>
+                </div>
+
+                <div class="group">
+                    <h3 class="label">Muita saavutettavuushuomioita
+                        <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                            aria-controls="info_additional" data-target="#info_additional" data-showtext="Näytä tiedot"
+                            data-hidetext="Hide Info">Näytä tiedot</button>
+                    </h3>
+                    <div class="information" id="info_additional" hidden="hidden">
+                        <p>Joskus voit toteuttaa enemmän saavutettavuusvaatimuksia, kuin ne jotka on määritelty
+                            ylempänä valitussa saavutettavuusstandardissa. Esimeriksi, voit tarjota viittomakielisiä
+                            videoita tai reaaliaikaista tekstitystä viestimissä. Tässä kohdassa voit listata nämä
+                            saavutettavuuden lisävaatimukset.
+                        </p>
+                        <p>
+                            <strong>Esimerkki:</strong>
+                            "Vaikka tavoitteemme on WCAG 2.1 Tason AA yhdenmukaisuus, me olemme myös soveltaneet
+                            joitakin
+                            tason AAA kriteereitä: tekstiä tarjotaan kuvana vain koristetarkoituksissa.
+                            Uudelleenkirjautuminen session katkeamisen jälkeen ei johda tiedon menettämiseen.
+                            Joillakin videoilla on viittomakielinen tulkkaus."</p>
+                    </div>
+
+                    <div class="field">
+                        <label for="accstmt_additions">Toteutetut lisäsaavutettavuusvaatimukset</label>
+                        <textarea id="accstmt_additions" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <h3 class="label">Palautteen vaihtoehdot
+                        <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                            aria-controls="info_feedback" data-target="#info_feedback" data-showtext="Näytä tiedot"
+                            data-hidetext="Hide Info">Näytä tiedot</button>
+                    </h3>
+                    <div class="information" id="info_feedback" hidden="hidden">
+                        <p>Kuinka käyttäjät voivat ottaa yhteyttä organisaatioosi kun he huomaavat saavutettavuusesteen?
+                            Ihanteellisesti sinun pitäisi tarjota useampi kuin yksi vaihtoehto. Kerro myös aika,
+                            jonka kuluessa käyttäjät voivat odottaa organisaatioltasi vastausta.
+                        </p>
+                    </div>
+
+                    <fieldset class="group" id="form-feedback">
+                        <legend class="visuallyhidden">Palautteen vaihtoehdot</legend>
+                        <div class="field">
+                            <label for="accstmnt_contact_phone">Puhelin</label>
+                            <em>(Esimerkki: “+12 34 567 89 00”)</em>
+                            <input type="tel" id="accstmnt_contact_phone" />
+                        </div>
+                        <div class="field">
+                            <label for="accstmnt_contact_email">Sähköposti</label>
+                            <em>(Esimerkki: “accessibility@Esimerkki.org”)</em>
+                            <input type="email" id="accstmnt_contact_email" />
+                        </div>
+                        <div class="field">
+                            <label for="accstmnt_contact_visit">Katuosoite</label>
+                            <em>(Esimerkki: “Pääkatu 1, 234 Esimerkkilä”)</em>
+                            <input type="text" id="accstmnt_contact_visit" />
+                        </div>
+                        <div class="field">
+                            <label for="accstmnt_contact_write">Postiosoite</label>
+                            <em>(Esimerkki: “PO Box 1, 234 Esimerkkilä”)</em>
+                            <input type="text" id="accstmnt_contact_write" />
+                        </div>
+
+                        <div class="field">
+                            <label for="accstmnt_contact_other">Muut yhteystavat</label>
+                            <em>(Esimerkki: sosiaalisessa mediassa; Twitter: @EsimerkkiUser)</em>
+                            <textarea id="accstmnt_contact_other"></textarea>
+                        </div>
+
+                        <div class="field">
+                            <label for="accstmnt_contact_responsetime">Tyypillinen vastausaika</label>
+                            <em>(Esimerkki: "2 työpäivää")</em>
+                            <input type="text" id="accstmnt_contact_responsetime" />
+                        </div>
+
+                    </fieldset>
+                </div>
+
+                <div class="group">
+                    <h3 class="label">Julkaisupäivä
+                        <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                            aria-controls="info_date" data-target="#info_date" data-showtext="Näytä tiedot"
+                            data-hidetext="Hide Info">Näytä tiedot</button>
+                    </h3>
+                    <div class="information" id="info_date" hidden="hidden">
+                        <p>Päivämäärän tarjoaminen auttaa käyttäjiä huomaamaan onko saavutettavuusseloste aktiivisesti
+                            ylläpidety tai vanhentunut. Ihanteellisesti saavutettavuusselosteen ei pitäisi olla
+                            vuotta vanhempi, tai sitä voidaan pitää vanhentuneena. Kuukauden lisääminen, tekee
+                            päivämäärästä selkeämmän kansainvälisesti (esimerkiksi "1 helmikuuta 2019" ennemmin kuin
+                            "01/02/2019", joka on monitulkintainen.).
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <label for="accstmt_date">Tämän saavutettavuusselosteen julkaisupäivä</label>
+                        <input type="text" id="accstmt_date" class="today" />
+                    </div>
+                </div>
+                {% include excol.html type="end" %}
+
+                {% include excol.html type="start" %}
+                <h2 id="create-efforts">Pyrkimyksenne</h2>
+
+                <p class="intro">
+                    Tässä osiossa voit kuvata organisaationne työtä jota organisaationne tekee
+                    saavutettavuuden varmistamiseksi. Tämä auttaa käytäjiä ymmärtämään vilpittömyytesi
+                    ja saavutettavuusselosteesi väitteiden kelpoisuuden.
+                </p>
+
+                {% include excol.html type="middle" %}
+                <h3 class="label">Organisatoriset toimenpiteet
+                    <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                        aria-controls="info_measures" data-target="#info_measures" data-showtext="Näytä tiedot"
+                        data-hidetext="Hide Info">Näytä tiedot</button>
+                </h3>
+                <div class="information" id="info_measures" hidden="hidden">
+                    <p>Listaa toimenpiteet jotka organisaatiosi ottaa kestävän saavutettavuuden saavuttamiseksi.
+                        Tämä sisällyttää toimenpiteet kuten hankintasäännöt, koulutus, tietoisuuden lisääminen,
+                        ja laadunvarmistus. Jotkut näistä toimenpiteistä on esimääriteltyjä avuksesi, mutta voit
+                        lisätä lisää tarvittaessa.
+                    </p>
+                </div>
+
+                <fieldset class="group">
+                    <legend class="visuallyhidden">Organisatoriset toimenpiteet</legend>
+                    <ul class="nolist field" id="effort-list">
+                        <li class="radio-field">
+                            <input id="accstmnt_orginfo_measures_1" name="accstmnt_orginfo_measures" type="checkbox"
+                                value="Include accessibility as part of our mission statement." />
+                            <label for="accstmnt_orginfo_measures_1">Sisällytetään saavutettavuus osaksi TBD:mission
+                                statement.</label>
+                        </li>
+                        <li class="radio-field">
+                            <input id="accstmnt_orginfo_measures_2" name="accstmnt_orginfo_measures" type="checkbox"
+                                value="Include accessibility throughout our internal policies." />
+                            <label for="accstmnt_orginfo_measures_2">Sisällytetään saavutettavuus osaksi sisäisiä
+                                politiikkoja.</label>
+                        </li>
+                        <li class="radio-field">
+                            <input id="accstmnt_orginfo_measures_3" name="accstmnt_orginfo_measures" type="checkbox"
+                                value="Integrate accessibility into our procurement practices." />
+                            <label for="accstmnt_orginfo_measures_3">Sisällytetään saavutettavuus osaksi
+                                hankintakäytäntöjä.</label>
+                        </li>
+                        <li class="radio-field">
+                            <input id="accstmnt_orginfo_measures_4" name="accstmnt_orginfo_measures" type="checkbox"
+                                value="Appoint an accessibility officer and/or ombudsperson." />
+                            <label for="accstmnt_orginfo_measures_4">Nimitetään saavutettavuusvastaava tai
+                                -henkilö.</label>
+                        </li>
+                        <li class="radio-field">
+                            <input id="accstmnt_orginfo_measures_5" name="accstmnt_orginfo_measures" type="checkbox"
+                                value="Provide continual accessibility training for our staff." />
+                            <label for="accstmnt_orginfo_measures_5">Järjestää jatkuvaa saavutettavuuskoulutusta
+                                henkilökunnalle.</label>
+                        </li>
+                        <li class="radio-field">
+                            <input id="accstmnt_orginfo_measures_6" name="accstmnt_orginfo_measures" type="checkbox"
+                                value="Assign clear accessibility targets and responsibilities." />
+                            <label for="accstmnt_orginfo_measures_6">Asettaa selkeät saavutettavuustavoitteet ja
+                                -vastuut.</label>
+                        </li>
+                        <li class="radio-field">
+                            <input id="accstmnt_orginfo_measures_7" name="accstmnt_orginfo_measures" type="checkbox"
+                                value="Employ formal accessibility quality assurance methods." />
+                            <label for="accstmnt_orginfo_measures_7">Ottaa käyttöön muodollisia saavutettavuuden
+                                laadunvalvontamenetelmiä.</label>
+                        </li>
+                    </ul>
+
+                    <div id="accstmnt_orginfo_othermeasures" class="group">
+                        <div class="field line">
+                            <label for="accstmnt_orginfo_othermeasures_1">Muu toimenpide 1</label>
+                            <em>(Esimerkki: “Include people with disabilities in our design personas”)</em>
+                            <input type="text" id="accstmnt_orginfo_othermeasures_1" name="accstmnt_orginfo_measures" />
+                        </div>
+                        <div class="field proto">
+                            <label for="accstmnt_orginfo_othermeasures_[n]">Muu toimenpide [n]</label>
+                            <input type="text" id="accstmnt_orginfo_othermeasures_[n]"
+                                name="accstmnt_orginfo_measures" />
+                        </div>
+                    </div>
+
+                    <button type="button" class="add-line">
+                        Lisää muu toimenpide
+                    </button>
+                </fieldset>
+                {% include excol.html type="end" %}
+
+                {% include excol.html type="start" %}
+                <h2 id="create-technical">Tekniset tiedot</h2>
+                <p class="intro">
+                    Tässä osiossa voit tarjota enemmän teknisiä yksityiskohtia auttaaksesi käyttäjiä ymmärtämään
+                    heidän huomaamimaan asioita. Tämä sisältää tietoa eri selainten yhteensopivuudesta eri
+                    verkkoselaimilla ja avustavilla teknologioilla.
+                </p>
+                {% include excol.html type="middle" %}
+
+                <h3 class="label">Saavutettavuuden rajoitukset
+                    <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                        aria-controls="info_limitations" data-target="#info_limitations" data-showtext="Näytä tiedot"
+                        data-hidetext="Hide Info">Näytä tiedot</button>
+                </h3>
+                <div class="information" id="info_limitations" hidden="hidden">
+                    <p>On monia tilanteita, joissa saavutettavuuden voi kohdistua rajoituksia. esimerkiksi
+                        et ehkä pysty varmistamaan välitöntä saavutettavuutta käyttäjän luomaan sisältöön.
+                        Läpinäkyvyys tällaisissa tilanteissa auttaa käyttäjiä ymmärtämään heidän mahdollisest
+                        havaitseman
+                        ongelman syitä, ja löytämään vaihtoehtoja. EU:n saavutettavuusdirektiivin nojalla,
+                        julkisyhteisöt ovat velvoitettuja toimittamaan tiedot sisällöistä, jotka eivät täytä
+                        saavutettavuusvaatimuksia ja, jos mahdollista, mistä löytää saavutettavia vaihtoehtoja.
+                    </p>
+                </div>
+
+                <fieldset class="group">
+                    <legend class="visuallyhidden">Saavutettavuuden rajoitukset</legend>
+                    <p class="expl">Listaa
+                        <em>sisällön osat</em>
+                        joissa on saavutettavuuden rajoituksia,
+                        <em>ongelman kuvaus</em>
+                        jonka käyttäjät voivat havaita, lyhyt selitys
+                        <em>miksi ongelma esiintyy</em>, ja
+                        <em>mitä tehdä</em>, kuten kehen ottaa yhteyttä tai mistä löytää saavutettavia
+                        vaihtoehtoja kun se on mahdollista.</p>
+
+                    <div id="accstmnt_issues">
+                        <fieldset id="accstmnt_limitation_1" class="group line">
+                            <legend>Saavutettavuusrajoite 1</legend>
+                            <div class="field">
+                                <label for="accstmnt_limitation_1_element">Sisältöosio</label>
+                                <em>(Esimerkki: “Käyttäjien kommentit”)</em>
+                                <input type="text" id="accstmnt_limitation_1_element" name="element" />
+                            </div>
+                            <div class="field">
+                                <label for="accstmnt_limitation_1_description">Ongelman kuvaus</label>
+                                <em>(Esimerkki: “Siirretyillä kuvilla ei välttämättä ole tekstivaihtoehtoa”)</em>
+                                <input type="text" id="accstmnt_limitation_1_description" name="description" />
+                            </div>
+                            <div class="field">
+                                <label for="accstmnt_limitation_1_reason">Miksi ongelma esiintyy</label>
+                                <em>(Esimerkki: “Emme voi varmistaa käyttäjän tuottaman tiedon laatua”)</em>
+                                <input type="text" id="accstmnt_limitation_1_reason" name="reason" />
+                            </div>
+                            <div class="field">
+                                <label for="accstmnt_limitation_1_us">Mitä teemme asialle</label>
+                                <em>(Esimerkki: “Seuraamme käyttäjän kommentteja ja tyypillisesti korjaamme
+                                    ongelmat kahden työpäivän kuluessa.”)</em>
+                                <input type="text" id="accstmnt_limitation_1_us" name="us" />
+                            </div>
+                            <div class="field">
+                                <label for="accstmnt_limitation_1_you">Mitä sinä voit tehdä</label>
+                                <em>(Esimerkki: “Käytä ‘raportoi ongelma’ painiketta jos huomaat ongelman”)</em>
+                                <input type="text" id="accstmnt_limitation_1_you" name="you" />
+                            </div>
+                        </fieldset>
+
+                        <fieldset id="accstmnt_limitation_[n]" class="group proto">
+                            <legend>Saavutettavuusrajoite [n]</legend>
+                            <div class="field">
+                                <label for="accstmnt_limitation_[n]_element">Sisältöosio</label>
+                                <input type="text" id="accstmnt_limitation_[n]_element" name="element" />
+                            </div>
+                            <div class="field">
+                                <label for="accstmnt_limitation_[n]_description">Ongelman kuvaus</label>
+                                <input type="text" id="accstmnt_limitation_[n]_description" name="description" />
+                            </div>
+                            <div class="field">
+                                <label for="accstmnt_limitation_[n]_reason">Miksi ongelma esiintyy</label>
+                                <input type="text" id="accstmnt_limitation_[n]_reason" name="reason" />
+                            </div>
+                            <div class="field">
+                                <label for="accstmnt_limitation_[n]_us">Mitä teemme asialle</label>
+                                <input type="text" id="accstmnt_limitation_[n]_us" name="us" />
+                            </div>
+                            <div class="field">
+                                <label for="accstmnt_limitation_[n]_you">Mitä sinä voit tehdä</label>
+                                <input type="text" id="accstmnt_limitation_[n]_you" name="you" />
+                            </div>
+                        </fieldset>
+
+                        <button type="button" class="add-line">
+                            Lisää uusi rajoite
+                        </button>
+                    </div>
+                </fieldset>
+
+                <h3 class="label">Yhteensopivuus käyttäjän ympäristön kanssa
+                    <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                        aria-controls="support_asstech" data-target="#support_asstech" data-showtext="Näytä tiedot"
+                        data-hidetext="Hide Info">Näytä tiedot</button>
+                </h3>
+                <div class="information" id="support_asstech" hidden="hidden">
+                    <p>Huolimatta yrityksestä, saavutettavuus ei ehkä toimi hyvin kaikissa käyttöjärjestelmien,
+                        verkkoselainten ja avustavien teknologioiden yhdistelmällä. Kehittäjät tyypillisesti testaavat
+                        verkkosivustonsa ja mobiilisovellukset yleisimmillä käyttäjäympäristöillä, yhteensopivuuden
+                        määräämiseksi. WCAG määrittelee vaatimukset saavutettavuustoiminnoiksi, sisällön tekijöiden
+                        toimesta olemaan
+                        <a href="https://www.w3.org/TR/WCAG21/#dfn-accessibility-supported">saavutettavuus tuettu</a>.
+                        Tämän yhteensopivuusodotuksen kommunikoiminen auttaa käyttäjää päättelemään, josko se
+                        aiheuttaisi
+                        ongelman, jonka he havaitsevat.
+                    </p>
+                </div>
+
+                <fieldset class="group" id="compatible_tech">
+                    <legend class="visuallyhidden">Yhteensopivuus käyttäjän ympäristön kanssa</legend>
+
+                    <p class="expl">
+                        Kuvaa ympäristöt (verkkoselainten, avustavien teknologioiden ja käyttöjärjestelmien yhdistelmät)
+                        joilla sisällön odotetaan toimivan. Tämän pitäisi olla linjassa WCAG:n määrittelemien
+                        <a href="https://www.w3.org/TR/WCAG21/#dfn-accessibility-supported">saavutettavus tuettu</a>
+                        -teknologioiden kanssa.</p>
+
+                    <div class="field line">
+                        <label for="accstmnt_asstech_compatible_1">Ympäristö 1</label>
+                        <em>(Esimerkki: “Selain X avustavalla teknologialla Y käyttöjärjestelmässä Z”)</em>
+                        <input type="text" id="accstmnt_asstech_compatible_1" name="accstmnt_asstech_compatible" />
+                    </div>
+
+                    <div class="field proto">
+                        <label for="accstmnt_asstech_compatible_[n]">Ympäristö [n]</label>
+                        <input type="text" id="accstmnt_asstech_compatible_[n]" name="accstmnt_asstech_compatible" />
+                    </div>
+
+                    <button class="add-line" type="button">Lisää muu yhteensopiva ympäristö</button>
+                </fieldset>
+
+                <h3 class="label">Tunnetut ohjeiden vastaisuudet
+                    <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                        aria-controls="support_incompatible" data-target="#support_incompatible"
+                        data-showtext="Näytä tiedot" data-hidetext="Hide Info">Näytä tiedot</button>
+                </h3>
+                <div class="information" id="support_incompatible" hidden="hidden">
+                    <P>Auta käyttäjiä ymmärtämään mitä käyttöjärjestelmien, selainten ja avustavien teknologioiden
+                        versioita ei (tai ei enää) tueta. Tämä auttaa käyttäjää päättämään voivatko he käyttäjän
+                        verkkopalveluasi tai mobiiliapplikaatiota nykyisessä ympäristössä.
+                    </P>
+                </div>
+
+                <fieldset class="group" id="incompatible_tech">
+                    <legend class="visuallyhidden">Tunnettu epäyhteensopivuus</legend>
+
+                    <p class="expl">
+                        Kuvaa ympäristöt (verkkoselainen, avustavien teknologioiden ja käyttöjärjestelmien yhdistelmät),
+                        joilla sisällön ei odoteta toimivan.
+                    </p>
+
+                    <div class="field line">
+                        <label for="accstmnt_asstech_incompatible_1">Ympäristö 1</label>
+                        <em>(Esimerkki: “selaimet jotka ovat pääversiosta kolme versiota jäljessä”
+                            tai “mobiilikäyttäjärjestelmä joka on vanhempi kuin 5 vuotta”)</em>
+                        <input type="text" id="accstmnt_asstech_incompatible_1" name="accstmnt_asstech_incompatible" />
+                    </div>
+                    <div class="field proto">
+                        <label for="accstmnt_asstech_incompatible_[n]">Ympäristö [n]</label>
+                        <input type="text" id="accstmnt_asstech_incompatible_[n]"
+                            name="accstmnt_asstech_incompatible" />
+                    </div>
+
+                    <button type="button" class="add-line">
+                        Lisää muu epäyhteensopiva ympäristö
+                    </button>
+                </fieldset>
+
+                <h3 class="label">Käytetyt teknologiat
+                    <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                        aria-controls="support_tech" data-target="#support_tech" data-showtext="Näytä tiedot"
+                        data-hidetext="Hide Info">Näytä tiedot</button>
+                </h3>
+                <div class="information" id="support_tech" hidden="hidden">
+                    <p>Saatat luottaa tiettyihin verkkoteknologioihin, kuten Javascriptiin, WAI-ARIA:n tai SVG:hen
+                        varmistaaksesi sisältösi saavutettavuuden. Näiden odotusten viestiminen
+                        saavutettavuusselosteessasi
+                        voi auttaa käyttäjiäsi ymmärtämään ongelmat, joita he voivat olleet havainneet. Esimerkiksi,
+                        saavutettavuustoiminnot eivät ehkä toimi, koska käyttäjä on laittanut Javascriptin pois päältä.
+                        <a href="https://www.w3.org/TR/WCAG21/#cc4">WCAG 2 ohjeidenmukaisuuden vaatimus 4</a>
+                        "<em>saavutettavuutta tuettiin käyttämällä niihin sopivia teknologioita</em>" antaa enemmän
+                        taustatietoja.
+                    </p>
+                </div>
+
+                <p class="expl">
+                    <p>Kuvaa teknologiat joihin ohjeidenmukaisuuden varmistamiseksi luotetaan.
+                        Sisältö ei olisi ohjeidenmukainen jos teknologia on laitettu pois päältä tai ei ole tuettu.</p>
+
+                    <fieldset class="field">
+                        <legend class="label">Teknologiat:</legend>
+
+                        <ul id="tech_relied" class="nolist">
+                            <li class="radio-field">
+                                <input type="checkbox" id="accstmnt_tech_html" name="accstmnt_tech" value="HTML" />
+                                <label for="accstmnt_tech_html">HTML</label>
+                            </li>
+
+                            <li class="radio-field">
+                                <input type="checkbox" id="accstmnt_tech_aria" name="accstmnt_tech" value="WAI-ARIA" />
+                                <label for="accstmnt_tech_aria">WAI-ARIA</label>
+                            </li>
+
+                            <li class="radio-field">
+                                <input type="checkbox" id="accstmnt_tech_css" name="accstmnt_tech" value="CSS" />
+                                <label for="accstmnt_tech_css">CSS</label>
+                            </li>
+
+                            <li class="radio-field">
+                                <input type="checkbox" id="accstmnt_tech_js" name="accstmnt_tech" value="JavaScript" />
+                                <label for="accstmnt_tech_js">JavaScript</label>
+                            </li>
+
+                            <li class="radio-field">
+                                <input type="checkbox" id="accstmnt_tech_smil" name="accstmnt_tech" value="SMIL" />
+                                <label for="accstmnt_tech_smil">SMIL</label>
+                            </li>
+
+                            <li class="radio-field proto">
+                                <input type="checkbox" id="accstmnt_tech_other_[n]" value="other" checked="checked" />
+                                <span id="accstmnt_tech_other_label_[n]">
+                                    <label for="accstmnt_tech_other_[n]">Muu [n]</label>
+                                    <span class="visuallyhidden">
+                                        name</span></span>
+                                <input id="accstmnt_tech_other_[n]_value" type="text"
+                                    aria-describedby="accstmnt_tech_other_label_[n]" name="accstmnt_tech" />
+                            </li>
+                        </ul>
+
+                        <button class="add-line" type="button">Lisää muu teknologia</button>
+                    </fieldset>
+
+                    <h3 class="label">Arviointitapa
+                        <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                            aria-controls="info_accstmnt_approach" data-target="#info_accstmnt_approach"
+                            data-showtext="Näytä tiedot" data-hidetext="Hide Info">Näytä tiedot</button>
+                    </h3>
+                    <div class="information" id="info_accstmnt_approach" hidden="hidden">
+                        <p>Kuinka arvioit verkkosivustosi tai mobiiliapplikaatiosi, päätelläksesi informaation ylemmissä
+                            osioissa? Tämä auttaa käyttäjiä ymmärtämään laadunvarmistusprosessisi ja taustan
+                            väitteillesi
+                            saavutettavuusselosteessasi.
+                        </p>
+                    </div>
+
+                    <fieldset id="accstmnt_assessment" class="group">
+                        <legend class="visuallyhidden">Arviointitapa</legend>
+                        <ul class="nolist">
+                            <li class="radio-field">
+                                <input id="accstmnt_approach_1" name="accstmnt_approach" type="checkbox"
+                                    value="Self-evaluation" />
+                                <label for="accstmnt_approach_1">Itsearviointi: sisällön arvioi oma organisaatiosi tai
+                                    sisällön kehittäjä</label>
+                            </li>
+                            <li class="radio-field">
+                                <input id="accstmnt_approach_2" name="accstmnt_approach" type="checkbox"
+                                    value="External evaluation" />
+                                <label for="accstmnt_approach_2">Ulkoinen arvio: sisällön arvioi ulkoinen taho, joka
+                                    ei ole ollut mukana suunnittelu- tai kehitysprosessissa.</label>
+                            </li>
+                        </ul>
+
+                        <div class="group">
+                            <div class="field line">
+                                <label for="accstmnt_approach_other_1">Muu tapa 1</label>
+                                <em>(Esimerkki: muodollinen laadunvarmistusprosessi koko suunnittelu- ja
+                                    kehitysprosessin ajan)</em>
+                                <input type="text" id="accstmnt_approach_other_1" name="accstmnt_approach" />
+                            </div>
+
+                            <div class="field proto">
+                                <label for="accstmnt_approach_other_[n]">Muu tapa [n]</label>
+                                <input type="text" id="accstmnt_approach_other_[n]" name="accstmnt_approach" />
+                            </div>
+
+                            <button type="button" class="add-line">Lisää muu tapa</button>
+                        </div>
+                    </fieldset>
+
+                    <h3 class="label">Liittyvä näyttö
+                        <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                            aria-controls="support_related" data-target="#support_related" data-showtext="Näytä tiedot"
+                            data-hidetext="Hide Info">Näytä tiedot</button>
+                    </h3>
+                    <div class="information" id="support_related" hidden="hidden">
+                        <p>Anna linkit liittyvään taustatietoihin ja näyttöön joka tukee väitteitä, jotka teet
+                            tässä saavutettavuusselosteessa, ja luodaksesi enemmän läpinäkyvyyttä ja uskottavuutta.
+                            Näyttöihin voi sisältyä evaluointiraportti, evaluointilausunto tai sertifiointi.
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <div class="field">
+                            <label for="accstmnt_audit_url">Linkki viimeisimpään arviointiraporttiin
+                                <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                                    aria-controls="info_audit_url" data-target="#info_audit_url"
+                                    data-showtext="Näytä tiedot" data-hidetext="Hide Info">Näytä tiedot</button>
+                            </label>
+                            <em>(Esimerkki: “https://Esimerkki.org/saavutettavuuden-arviointiraportti”)</em>
+
+                            <div class="information" id="info_audit_url" hidden="hidden">
+                                <p>Arviointiraportti antaa yksityiskohtia, mitkä saavutettavuusvaatimukset on saavutettu
+                                    ja
+                                    mitä ei. Vaikka tämä on yleensä luonteeltaan teknisempi , se voi auttaa käyttäjiä
+                                    ymmärtämään heidän huomaamiaan ongelmia. Voit käyttää
+                                    <a href="https://www.w3.org/WAI/eval/report-tool/">WCAG-EM
+                                        evaluointiraporttityökalua
+                                    </a>
+                                    luomaan evaluointiraportin. Laita linkki raporttiin tähän.</p>
+                            </div>
+
+                            <input type="url" id="accstmnt_audit_url" />
+                        </div>
+
+                        <div class="field">
+                            <label for="accstmnt_audit_wcagem">Linkki evaluointilausuntoon
+                                <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                                    aria-controls="info_audit_statement" data-target="#info_audit_statement"
+                                    data-showtext="Näytä tiedot" data-hidetext="Hide Info">Näytä tiedot</button>
+                            </label>
+                            <em>(Esimerkki: “https://Esimerkki.org/saavutettavuuden-evaluointilausunto”)</em>
+
+                            <div class="information" id="info_audit_statement" hidden="hidden">
+                                <p>Saavutettavuuslausunto antaa yhteenvedon saavutettavuusraportin löydöksistä.
+                                    The
+                                    <a href="https://www.w3.org/TR/WCAG-EM/">Verkkosivuston saavutettavuuden
+                                        ohjeidenmukaisuuden
+                                        arviointimenetelmä (WCAG-EM)</a>
+                                    määrittelee arviointilausuntojen vaatimukset dokumentin
+                                    <a href="https://www.w3.org/TR/WCAG-EM/#step5c">kohdassa 5.c</a>
+                                    . Tämä voidaan toimittaa joko yllä annetun arviointiraportin sijasta tai lisänä.
+                                </p>
+                            </div>
+
+                            <input type="url" id="accstmnt_audit_wcagem" />
+                        </div>
+
+                        <div class="field line">
+                            <label for="accstmnt_audit_other_1">Muu näyttö 1</label>
+                            <em>(Esimerkki: “https://Esimerkki.org/accessibility-evaulation-certificate”)</em>
+                            <input type="text" id="accstmnt_audit_other_1" name="accstmnt_audit_other" />
+                        </div>
+
+                        <div class="field proto">
+                            <label for="accstmnt_audit_other_[n]">Muu näyttö [n]</label>
+                            <input type="text" id="accstmnt_audit_other_[n]" name="accstmnt_audit_other" />
+                        </div>
+
+                        <button type="button" class="add-line">
+                            Muu liittyvä näyttö
+                        </button>
+                    </div>
+
+                    {% include excol.html type="end" %}
+
+                    {% include excol.html type="start" %}
+                    <h2 id="create-approval">Hyväksyntä ja valitusprosessi</h2>
+                    <p class="intro">
+                        Tässä osiossa voit lisätä tietoa tämän saavutettavuusselosteen muodollisesta
+                        hyväksynnästä, ja , soveltuessa, valitusten eskalaatioproseduurista.
+                    </p>
+                    {% include excol.html type="middle" %}
+
+                    <h3 class="label">Muodollinen hyväksyntä
+                        <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                            aria-controls="org_approved" data-target="#org_approved" data-showtext="Näytä tiedot"
+                            data-hidetext="Hide Info">Näytä tiedot</button>
+                    </h3>
+                    <div class="information" id="org_approved" hidden="hidden">
+                        <p>Organisaatiosi voi haluta muodollisesti hyväksyä tämän saavutettavuusselosteen, esimerkiksi
+                            sisäistä käyttöä varten tai näyttääkseen käyttäjille, että se on osa
+                            yrityspolitiikkaa.
+                        </p>
+                    </div>
+
+                    <fieldset class="group">
+                        <legend class="visuallyhidden">Hyväksyntä</legend>
+
+                        <div class="field">
+                            <label for="accstmnt_orginfo_approved_name">Henkilön tai osaston nimi</label>
+                            <em>(Esimerkki: “Viestintäosasto”)</em>
+                            <input type="text" id="accstmnt_orginfo_approved_name" />
+                        </div>
+
+                        <div class="field">
+                            <label for="accstmnt_orginfo_approved_function">Toiminto</label>
+                            <em>(Esimerkki: “Viestintäjohtaja”)</em>
+                            <input type="text" id="accstmnt_orginfo_approved_function" />
+                        </div>
+                    </fieldset>
+
+                    <h3 class="label">Muodolliset valitukset
+                        <button type="button" class="showhidebutton button-small" aria-expanded="false"
+                            aria-controls="info_complaints" data-target="#info_complaints" data-showtext="Näytä tiedot"
+                            data-hidetext="Hide Info">Näytä tiedot</button>
+                    </h3>
+                    <div class="information" id="info_complaints" hidden="hidden">
+                        <p>Joissakin tilanteissa voit haluta tai olet velvoitettu antamaan informaatiota muodollisesta
+                            valitusprosessista. Esimerkiksi organisaatiosi laadunvarmistusprosessi voi vaatia sinua
+                            järjestämään valitusprosessin jossa on selkeät eskalaatiopolut.
+                            <a href="https://eur-lex.europa.eu/eli/dir/2016/2102/oj">EU:n verkkosaavutettavuusdirektiivi
+                                {% include_cached external.html %}</a>
+                            ennakoi, että EU-mailla on lailliset "voimaanasetusproseduurit" kun käyttäjät eivät ole
+                            tyytyväisiä julkisyhteisöjen vastauksiin. Ilmoita käyttäjille valitusmenettelytavoista.
+                            Tämä voi myös motivoida heitä antamaan arvokasta palautetta sisältösi saavutettavuudesta.
+                        </p>
+                        <p>
+                            <strong>Esimerkki:</strong>
+                            "Pyrimme vastaamaan saavutettavuuspalautteisiin kahden työpäivän aikana, ja ehdottaa
+                            ratkaisua
+                            10 työpäivässä. Olet oikeutettu eskaloimaan valituksen [organisaatiolle tai lailliselle
+                            entiteetille
+                            ], jos olet tyytymätön vastaukseemme."
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <label for="accstmt_complaints">Kuvaa muodolliset valitusmenettelytavat</label>
+                        <textarea id="accstmt_complaints" rows="3"></textarea>
+                    </div>
+                    {% include excol.html type="end" %}
+
+                    {% include box.html type="start" class="" %}
+                    <div class="statement-actions">
+                        <a class="button" href="#preview" data-action="statement_preview">
+                            Esikatsele saavutettavuusselosteesi
+                        </a>
+                    </div>
+                    {% include box.html type="end" %}
+            </form>
+        </div>
+    </section>
+
+    <section class="page preview" hidden="hidden">
+        {% include box.html type="start" title="Esikatsele saavutettavuusselosteesi" class="Esimerkki" %}
+        <div id="statement_generated">
+            <div id="statement_header">
+                <h2>Saavutettavuusseloste: <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME"></span></h2>
+                <p>
+                    <span class="basic-information organization-name" data-print="accstmt_org"
+                        data-printdefault="ORGANIZATION"></span>
+                    on sitoutunut varmistaakseen digitaalisen saavutettavuuden kaikille.
+                    Olemme jatkuvasti parantamassa käyttäjäkokemusta kaikille ja sovellamme sopivia
+                    saavutettavuusstandardeja.
+                </p>
+            </div>
+
+            <div id="statement-measures-block" data-if="accstmnt_orginfo_measures">
+                <h3>Saavutettavuutta tukevat toimet</h3>
+                <p>
+                    <span class="basic-information organization-name" data-print="accstmt_org"
+                        data-printdefault="ORGANIZATION"></span>
+                    tekee seuraavat toimet varmistaakseen saavutettavuuden
+                    <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME"></span>-palvelussa.
+                </p>
+                <ul id="statement-measures" class="organizational-effort accessibility-measures"
+                    data-print="accstmnt_orginfo_measures" data-printfilter="capitalize"></ul>
+            </div>
+
+            <div id="statement-conformance" data-if="accstmnt_conformance">
+                <h3>Ohjeidenmukaisuuden tila:</h3>
+                <p>
+                    <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Verkkosisällön saavutettavuusohjeet
+                        (WCAG)</a>
+                    määrittelee vaatimukset suunnittelijoille ja kehittäjille saavutettavuuden parantamiseksi
+                    ihmisille joilla on vammoja tai rajoitteita.
+                    Siinä määritellään kolme eri tasoa: Taso A, Taso AA, ja Taso AAA.
+                    <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME">WEBSITE_NAME</span>
+                    is
+                    <span class="basic-information conformance-status" data-print="accstmnt_conformance"
+                        data-printfilter="lowercase"></span>
+                    with
+                    <span class="basic-information conformance-standard"><span data-print="accstmnt_standard"
+                            data-if="accstmnt_standard_other_name" data-negate></span><span
+                            data-print="accstmnt_standard_other_name"
+                            data-if="accstmnt_standard_other_name"></span>.</span>
+                    <span data-if="accstmnt_conformance_meaning">
+                        <span class="basic-information conformance-status" data-print="accstmnt_conformance"></span>
+                        means that
+                        <span class="basic-information conformance-meaning" data-print="accstmnt_conformance_meaning"
+                            data-printdefault="CONFORMANCE_MEANING"></span>.
+                    </span>
+                </p>
+            </div>
+
+            <div id="statement-additions" data-if="accstmt_additions">
+                <h4>Muita saavutettavuushuomioita</h4>
+                <p class="basic-information conformance-additions" data-print="accstmt_additions"
+                    data-printfilter="capitalize"></p>
+            </div>
+
+            <div
+                data-if="accstmnt_contact_phone, accstmnt_contact_email, accstmnt_contact_visit, accstmnt_contact_write, accstmnt_contact_other">
+                <h3>Palaute</h3>
+                <p>
+                    Toivomme palautetta
+                    <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME"></span>-palvelun saavutettavuudesta.
+                    Ilmoitathan meille ystävällisesti, jos huomaat saavutettavuusesteitä:
+                    <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME"></span>:
+                    sivustolla.</p>
+                <ul class="basic-information feedback h-card">
+                    <li data-if="accstmnt_contact_phone">
+                        Puhelin:
+                        <span class="phone-number p-tel" data-print="accstmnt_contact_phone"></span>
+                    </li>
+                    <li data-if="accstmnt_contact_email">
+                        Sähköposti:
+                        <a class="email u-email" href="mailto:" data-print="accstmnt_contact_email"></a>
+                    </li>
+                    <li data-if="accstmnt_contact_visit">
+                        Käyntiosoite:
+                        <span class="visitor-address p-extended-address" data-print="accstmnt_contact_visit"></span>
+                    </li>
+                    <li data-if="accstmnt_contact_write">
+                        Postiosoite:
+                        <span class="postal-address p-adr" data-print="accstmnt_contact_write"></span>
+                    </li>
+                    <li class="contact-other p-note" data-if="accstmnt_contact_other"
+                        data-print="accstmnt_contact_other"></li>
+                </ul>
+                <p data-if="accstmnt_contact_responsetime">
+                    Pyrimme vastaamaan palautteeseen <span class="feedback responsetime"
+                        data-print="accstmnt_contact_responsetime"></span>.
+                </p>
+            </div>
+
+            <div id="statement-asstech" data-if="accstmnt_asstech_compatible, accstmnt_asstech_incompatible">
+                <h3>Yhteensopivuus selainten ja avustavien teknologioiden kanssa</h3>
+                <div id="statement-asstech-compatible-block">
+                    <p>
+                        <span class="basic-information website-name" data-print="accstmt_namesite"
+                            data-printdefault="WEBSITE_NAME"></span>
+                        on suunniteltu toimimaan seuraavien avustavien teknologioiden kanssa:
+                    </p>
+                    <ul id="statement-asstech-compatible" class="technical-information compatible-environments"
+                        data-print="accstmnt_asstech_compatible" data-printdefault="COMPATIBLE_LIST"></ul>
+                </div>
+
+                <div id="statement-asstech-incompatible-block" data-if="accstmnt_asstech_incompatible">
+                    <p>
+                        <span class="basic-information website-name" data-print="accstmt_namesite"
+                            data-printdefault="WEBSITE_NAME"></span>
+                        ei ole yhteensopiva:
+                    </p>
+                    <ul id="statement-asstech-incompatible" class="technical-information incompatible-environments"
+                        data-print="accstmnt_asstech_incompatible"></ul>
+                </div>
+            </div>
+
+            <div id="statement-conftech" data-if="accstmnt_tech">
+                <h3>Tekniset määritykset</h3>
+                <p>
+                    <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME"></span>
+                    saavutettavuus vaatii seuraavia teknologioita toimiakseen tietyn verkkoselaimen, avustavien
+                    teknologioiden
+                    tai tietokoneellesi asennettavien lisäosien yhdistelmänä:
+                </p>
+                <ul id="statement-tech" class="technical-information technologies-used" data-print="accstmnt_tech"></ul>
+                <p>Näitä teknologioita käytetään saavutettavuusohjeistuksen noudattamiseen</p>
+            </div>
+
+            <div id="statement-limitations-block">
+                <h3>Rajoitteet ja vaihtoehdot</h3>
+                <p>
+                    Huolimatta yrityksistämme varmistaa sivuston
+                    <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME">WEBSITE_NAME</span> saavutettavuus, sisällössä voi silti olla
+                    joitakin
+                    rajoitteita. Alla on kuvaus tunnetuista rajoitteista ja mahdollisista
+                    ratkaisuista. Otathan yhteyttä meihin, jos huomaat asian, jota ei ole alla listattu.
+                </p>
+
+                <p>
+                    <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME">WEBSITE_NAME</span> tunnetut rajoitteet:
+                </p>
+                <ol id="statement-limitations" class="technical-information accessibility-limitations"></ol>
+            </div>
+
+            <div id="statement-assessment-block" data-if="accstmnt_approach">
+                <h3>Arviointitapa</h3>
+                <p>
+                    <span class="basic-information organization-name" data-print="accstmt_org"
+                        data-printdefault="ORGANIZATION">ORGANIZATION</span>
+                    arvioi
+                    <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME">WEBSITE_NAME</span>
+                    -palvelun saavutettavuuden seuraavilla menetelmillä:
+                </p>
+                <ul id="statement-assessments" class="technical-information assessment-approaches"
+                    data-print="accstmnt_approach"></ul>
+            </div>
+
+            <div data-if="accstmnt_audit_url">
+                <h3>Arviointiraportti</h3>
+                <p>
+                    <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME">WEBSITE_NAME</span>
+                    -palvelun arviointiraportti on osoitteessa:
+                    <a class="technical-information related-evidence" href="" data-print="accstmnt_audit_url"></a>.
+                </p>
+            </div>
+
+            <div data-if="accstmnt_audit_wcagem">
+                <h3>Arviointilausunto</h3>
+                <p>
+                    <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME">WEBSITE_NAME</span>
+                    -palvelun arviointilausunto on:
+                    <a class="technical-information related-evidence" href="" data-print="accstmnt_audit_wcagem"></a>.
+                </p>
+            </div>
+
+            <div data-if="accstmnt_audit_other">
+                <h3>Muu näyttö</h3>
+                <p>Muu näyttö <span class="basic-information website-name" data-print="accstmt_namesite"
+                        data-printdefault="WEBSITE_NAME"></span> on:</p>
+                <ul data-print="accstmnt_audit_other" class="technical-information related-evidence-other"></ul>
+            </div>
+
+            <div id="statement-approval-block"
+                data-if="accstmnt_orginfo_approved_name, accstmnt_orginfo_approved_function">
+                <h3>Tämän saavutettavuusselosteen muodollinen hyväksyntä</h3>
+
+                <p>Tämän saavutettavuusselosteen on hyväksynyt:</p>
+                <p class="approval">
+                    <span class="basic-information organization-name" data-print="accstmt_org"
+                        data-printdefault="ORGANIZATION"></span><br />
+                    <span class="approved-by" data-print="accstmnt_orginfo_approved_name"
+                        data-printdefault="APPROVED_BY"></span><br />
+                    <span class="approved-by-jobtitle" data-print="accstmnt_orginfo_approved_function"
+                        data-if="accstmnt_orginfo_approved_function"></span>
+                </p>
+            </div>
+
+            <div data-if="accstmt_complaints">
+                <h3>Muodolliset valitukset</h3>
+                <p class="complaints" data-print="accstmt_complaints"></p>
+            </div>
+
+            <hr noshade="noshade" />
+
+            <p>
+                Tämä saavutettavuusseloste on luotu
+                <span class="basic-information statement-created-date" data-print="accstmt_date"
+                    data-printdefault="DATE"></span>
+                käyttäen <a href="{{ page.parent_path | absolute_url }}">W3C saavutettavuusselosteen luontityökalua</a>.
+            </p>
+        </div>
+        {% include box.html type="end" %}
+
+        <div class="button-group statement-actions">
+            <a class="button" href="#create">Takaisin työkaluun</a>
+            <button type="button" data-action="preview_save_as_html">Lataa HTML-sivuna</button>
+        </div>
+    </section>
+</div>
+
+<script src="{{ '/content-images/wai-statements/generator.js' | relative_url}}"></script>
